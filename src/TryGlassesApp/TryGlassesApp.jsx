@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import GlassesList from "./GlassesList";
-import Modal from "./Modal";
 
 import { glassesArr } from "./data";
 import "./style.css";

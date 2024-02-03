@@ -1,5 +1,5 @@
 /* .abc {
-    background-image: url("./glassesImage/background.jpg");
+    background-image: url("../glassesImage/background.jpg");
 } */
 .model {
     display: flex;
