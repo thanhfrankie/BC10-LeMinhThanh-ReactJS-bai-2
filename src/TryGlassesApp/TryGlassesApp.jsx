@@ -66,8 +66,11 @@ export default class TryGlassesApp extends Component {
               <img className="glassOnEye" src={this.state.url} alt="" />
             </div>
             <div className="imgDesc">
+
               <div className="name">{this.state.name }</div>
               <div className="desc">{ this.state.desc}</div>
+            </div>
+            <div className="opa">
             </div>
           </div>
           <div>

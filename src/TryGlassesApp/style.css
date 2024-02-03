@@ -10,28 +10,37 @@
     flex-direction: row;
     padding: 15% 0%;
 }
-.imgDesc {
+.opa {
     width: 100%;
     height: 35%;
     background-color: #E09159;
-    opacity: 0.3;
+    opacity: 0.1;
     position: absolute;
     bottom: 0;
     left: 0;
+}
+.imgDesc {
+    width: 100%;
+    height: 35%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
 }
 .glassesTrial {
     position: absolute;
     top: 24%;
     left: 23%;
     opacity: 0.3;
+    
 }
 .glassOnEye {
     width: 160px;
 }
 .name  {
-    color: #7D55B0;
+    color: blue;
     text-transform: uppercase;
 }
 .desc {
-    color: #FFEFD9;
+    color: black;
 }
