@@ -7,7 +7,7 @@ export default class TryGlassesApp extends Component {
   state = {
     url: "",
     name: "",
-    desc: ""
+    desc: "",
   };
   handleChangeGlass = (url, name, desc) => {
     this.setState({
@@ -21,7 +21,11 @@ export default class TryGlassesApp extends Component {
     return glassesArr.map((item) => {
       return (
         <div className="col mt-2">
-          <button onClick={() => this.handleChangeGlass(item.url, item.name, item.desc)}>
+          <button
+            onClick={() =>
+              this.handleChangeGlass(item.url, item.name, item.desc)
+            }
+          >
             <img
               className=""
               style={{ width: "200px" }}
@@ -34,52 +38,51 @@ export default class TryGlassesApp extends Component {
     });
   };
   render() {
-    let url = `./glassesImage/${this.state.url}.jpg`
+    let modelCss = {
+      width: "300px",
+      height: "360px",
+      backgroundImage: "url('./glassesImage/model.jpg')",
+      zIndex: 10,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      position: "relative",
+    };
+    let bgImg = {
+      width: "100%",
+      height: "100vh",
+      backgroundImage: "url('./glassesImage/background.jpg')",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      position: "relative",
+    };
+    let overlayBgImg = {
+      width: "100%",
+      height: "100vh",
+      backgroundColor: `rgba(0,0,0,.5)`,
+      position: "absolute",
+      top: 0,
+      left: 0,
+    };
     return (
-      <div
-        style={{
-          width: "100%",
-          height: "100vh",
-          backgroundImage: "url('./glassesImage/background.jpg')",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-      >
+      <div style={bgImg}>
+        <div style={overlayBgImg}></div>
         <div className="container model">
-          <div
-            style={{
-              width: "300px",
-              height: "360px",
-              backgroundImage: "url('./glassesImage/model.jpg')",
-              zIndex: 10,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              position: "relative",
-            }}
-          >
-            {/* <img style={{ width: "300px" }} src="./glassesImage/model.jpg" alt /> */}
+          <div style={modelCss}>
             <div className="glassesTrial">
               <img className="glassOnEye" src={this.state.url} alt="" />
             </div>
             <div className="imgDesc">
-
-              <div className="name">{this.state.name }</div>
-              <div className="desc">{ this.state.desc}</div>
+              <div className="name">{this.state.name}</div>
+              <div className="desc">{this.state.desc}</div>
             </div>
-            <div className="opa">
-            </div>
+            <div className="opa"></div>
           </div>
           <div>
-            <img
-              style={{ width: "300px" }}
-              src="./glassesImage/model.jpg"
-              alt=""
-            />
+            <img style={modelCss} src="./glassesImage/model.jpg" alt="" />
           </div>
         </div>
-
         <div className="container py-3">
           <div className="row">{this.renderGlassesesList()}</div>
         </div>
